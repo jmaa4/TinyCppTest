@@ -22,8 +22,8 @@ int main (int, char*[])
 {
     if (!TinyCppTest::RunTests ()) {
         return 1;
-	  }
-	  return 0;
+    }
+    return 0;
 }
 ```
 
@@ -36,12 +36,12 @@ You can write tests in any C++ files using the `TEST` macro. Use the `ASSERT` ma
 
 TEST (AdditionTest)
 {
-	  ASSERT (40 + 2 == 42);
+    ASSERT (40 + 2 == 42);
 }
 
 TEST (SubtractionTest)
 {
-	  ASSERT (44 - 2 == 42);
+    ASSERT (44 - 2 == 42);
 }
 ```
 
