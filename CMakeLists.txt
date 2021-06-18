@@ -9,6 +9,8 @@ add_definitions (-DUNICODE -D_UNICODE)
 
 project (TinyCppTest)
 
+enable_testing ()
+
 function (SetCompilerOptions module)
 	target_compile_options (${module} PUBLIC "$<$<CONFIG:Debug>:-DDEBUG>")
 	if (WIN32)
@@ -48,3 +50,4 @@ target_include_directories (Example PUBLIC
 )
 SetCompilerOptions (Example)
 source_group ("Sources" FILES ${ExampleSourceFiles})
+add_test (Example Example)

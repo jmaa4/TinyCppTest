@@ -1,0 +1,35 @@
+version: "{build}"
+
+clone_folder: c:\projects\TinyCppTest
+
+image:
+  - Visual Studio 2017
+  - Visual Studio 2019
+
+configuration:
+  - Debug
+  - Release
+  - RelWithDebInfo
+
+platform:
+  - x64
+
+init:
+  - set cMakeParams=
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%" == "Visual Studio 2017" ( set cMakeParams=-G "Visual Studio 15 2017 Win64" )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%" == "Visual Studio 2019" ( set cMakeParams=-G "Visual Studio 16 2019" -A "x64")
+
+before_build:
+  - mkdir Build
+  - cd Build
+  - cmake %cMakeParams% ..
+  - cd ..
+
+build:
+  project: Build\TinyCppTest.sln
+  verbosity: minimal
+
+test_script:
+  - cd Build
+  - ctest --verbose --build-config %configuration%
+  - cd ..
