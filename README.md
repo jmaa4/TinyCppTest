@@ -26,7 +26,7 @@ int main (int, char*[])
 
 ### Write Tests
 
-You can write tests in any C++ files using the `TEST` macro. Use the `ASSERT` macro in your tests to check conditions.
+You can write tests in any C++ files using the `TEST` macro. Use the `ASSERT` macro to check conditions.
 
 ```cpp
 #include "TinyCppTest.hpp"
