@@ -13,7 +13,7 @@
 #define WIN_PATH_SEPARATOR	L'\\'
 #define PATH_SEPARATOR		L'/'
 
-namespace SimpleTest
+namespace TinyCppTest
 {
 
 enum class ConsoleColor
@@ -246,22 +246,22 @@ inline void RegisterTest (Test* test)
 
 }
 
-#define TEST(TESTNAME)											\
-class TESTNAME##_Test : public SimpleTest::Test {				\
-public:															\
-	TESTNAME##_Test () :										\
-		SimpleTest::Test (#TESTNAME)							\
-	{															\
-	}															\
-	virtual void RunTest () override;							\
-};																\
-static class TESTNAME##_Registrator {							\
-	public:														\
-		TESTNAME##_Registrator ()								\
-		{														\
-			SimpleTest::RegisterTest (new TESTNAME##_Test ());	\
-		}														\
-} TESTNAME##_RegistratorInstance;								\
+#define TEST(TESTNAME)												\
+class TESTNAME##_Test : public TinyCppTest::Test {					\
+public:																\
+	TESTNAME##_Test () :											\
+		TinyCppTest::Test (#TESTNAME)								\
+	{																\
+	}																\
+	virtual void RunTest () override;								\
+};																	\
+static class TESTNAME##_Registrator {								\
+	public:															\
+		TESTNAME##_Registrator ()									\
+		{															\
+			TinyCppTest::RegisterTest (new TESTNAME##_Test ());		\
+		}															\
+} TESTNAME##_RegistratorInstance;									\
 void TESTNAME##_Test::RunTest ()
 
 #define ASSERT(condition) TestAssert (condition, __FILE__, __LINE__)

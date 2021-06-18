@@ -2,7 +2,7 @@
 
 int main (int, char*[])
 {
-	if (!SimpleTest::RunTests ()) {
+	if (!TinyCppTest::RunTests ()) {
 		return 1;
 	}
 	return 0;
