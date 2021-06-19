@@ -3,7 +3,7 @@
 TEST (AssertTest)
 {
 	static const double Eps = 0.00001;
-	static const double BigEps = 0.01;
+	static const double SmallEps = 0.000000001;
 
 	ASSERT (21 * 2 == 42);
 	ASSERT (21 * 2 != 43);
@@ -18,5 +18,5 @@ TEST (AssertTest)
 	ASSERT_NEQ_EPS (0.1 + 0.2, 0.4, Eps);
 
 	ASSERT_EQ_EPS (0.000001, 0.000002, Eps);
-	ASSERT_NEQ_EPS (0.000001, 0.000002, BigEps);
+	ASSERT_NEQ_EPS (0.000001, 0.000002, SmallEps);
 }
