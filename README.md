@@ -48,3 +48,5 @@ TEST (SubtractionTest)
 ### Run Tests
 
 Run the created executable file, and check the results in the console.
+
+![image](https://user-images.githubusercontent.com/2034315/122634012-f7476a80-d0db-11eb-8342-beb181e709d8.png)
