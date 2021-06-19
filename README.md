@@ -48,7 +48,9 @@ TEST (SubtractionTest)
 You can use the assertion types below:
 - `ASSERT (condition)`: Checks if the given condition is true.
 - `ASSERT_EQ (a, b)`: Checks if the given values are equal using the equality operator.
+- `ASSERT_NEQ (a, b)`: Checks if the given values are not equal using the inequality operator.
 - `ASSERT_EQ_EPS (a, b, eps)`: Checks if the given numbers are equal using the given epsilon.
+- `ASSERT_NEQ_EPS (a, b, eps)`: Checks if the given numbers are not equal using the given epsilon.
 
 ### Run Tests
 
