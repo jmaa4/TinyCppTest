@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <memory>
+#include <cmath>
 
 #ifdef _WIN32
 #include <windows.h>
