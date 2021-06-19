@@ -153,7 +153,9 @@ protected:
 class Suite
 {
 public:
-	Suite ()
+	Suite () :
+		tests (),
+		appLocation ()
 	{
 
 	}
@@ -199,6 +201,16 @@ public:
 		tests.push_back (std::shared_ptr<Test> (test));
 	}
 
+	const std::wstring& GetAppLocation () const
+	{
+		return appLocation;
+	}
+
+	void SetAppLocation (const std::wstring& newAppLocation)
+	{
+		appLocation = newAppLocation;
+	}
+
 	static Suite& Get ()
 	{
 		static Suite suite;
@@ -207,27 +219,30 @@ public:
 
 private:
 	std::vector<std::shared_ptr<Test>> tests;
+	std::wstring appLocation;
 };
-
-static std::wstring appLocation;
 
 inline void SetAppLocation (const std::wstring& newAppLocation)
 {
-	appLocation = newAppLocation;
+	std::wstring appLocation = newAppLocation;
 	for (size_t i = 0; i < appLocation.length (); ++i) {
 		if (appLocation[i] == WIN_PATH_SEPARATOR) {
 			appLocation[i] = PATH_SEPARATOR;
 		}
 	}
+	Suite& suite = Suite::Get ();
+	suite.SetAppLocation (appLocation);
 }
 
 inline std::wstring GetAppLocation ()
 {
-	return appLocation;
+	const Suite& suite = Suite::Get ();
+	return suite.GetAppLocation ();
 }
 
 inline std::wstring GetAppFolderLocation ()
 {
+	std::wstring appLocation = GetAppLocation ();
 	size_t lastSeparator = appLocation.find_last_of (PATH_SEPARATOR);
 	if (lastSeparator == std::wstring::npos) {
 		return std::wstring ();
