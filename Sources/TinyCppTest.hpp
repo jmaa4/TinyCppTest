@@ -266,6 +266,8 @@ void TESTNAME##_Test::RunTest ()
 
 #define ASSERT(condition) TestAssert (condition, __FILE__, __LINE__)
 #define ASSERT_EQ(a, b) TestAssert (a == b, __FILE__, __LINE__)
+#define ASSERT_NEQ(a, b) TestAssert (a != b, __FILE__, __LINE__)
 #define ASSERT_EQ_EPS(a, b, eps) TestAssert (abs (a - b) < eps, __FILE__, __LINE__)
+#define ASSERT_NEQ_EPS(a, b, eps) TestAssert (abs (a - b) >= eps, __FILE__, __LINE__)
 
 #endif
