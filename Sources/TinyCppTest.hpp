@@ -1,3 +1,6 @@
+// https://github.com/kovacsv/TinyCppTest
+// Version: 0.1.0
+
 #ifndef TINYCPPTEST_HPP
 #define TINYCPPTEST_HPP
 
