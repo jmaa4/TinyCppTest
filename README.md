@@ -3,7 +3,7 @@
 A small, header-only C++ unit testing library. With TinyCppTest you can set up your test environment in a couple of minutes. You only have to include one header file in your project, init the library in the main function, and start testing.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/6ih2b1i76b0u5wku?svg=true)](https://ci.appveyor.com/project/kovacsv/tinycpptest)
-[![Build Status](https://travis-ci.com/kovacsv/TinyCppTest.svg?branch=main)](https://travis-ci.com/kovacsv/TinyCppTest)
+[![Build status](https://github.com/kovacsv/TinyCppTest/actions/workflows/build.yml/badge.svg)](https://github.com/kovacsv/TinyCppTest/actions/workflows/build.yml)
 
 # How To Use?
 
