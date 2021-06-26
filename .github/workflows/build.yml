@@ -12,10 +12,11 @@ env:
 jobs:
   build:
     
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os-type}}
     
     strategy:
       matrix:
+        os-type: [windows-latest, macos-latest, ubuntu-latest]
         configuration: [Debug, Release, RelWithDebInfo]    
     
     steps:
