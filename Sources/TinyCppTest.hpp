@@ -167,7 +167,7 @@ public:
 		green.Write ("[ ------- ] ");
 		std::cout << "Running " << tests.size () << " tests." << std::endl;
 		std::vector<std::string> failedTestNames;
-		for (const std::shared_ptr<Test>& test : tests) {
+		for (const std::unique_ptr<Test>& test : tests) {
 			if (!test->Run ()) {
 				failedTestNames.push_back (test->GetName ());
 			}
@@ -198,7 +198,7 @@ public:
 
 	void AddTest (Test* test)
 	{
-		tests.push_back (std::shared_ptr<Test> (test));
+		tests.push_back (std::unique_ptr<Test> (test));
 	}
 
 	const std::wstring& GetAppLocation () const
@@ -218,7 +218,7 @@ public:
 	}
 
 private:
-	std::vector<std::shared_ptr<Test>> tests;
+	std::vector<std::unique_ptr<Test>> tests;
 	std::wstring appLocation;
 };
 
