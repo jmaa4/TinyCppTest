@@ -25,3 +25,4 @@ jobs:
     - name: Test
       working-directory: ${{github.workspace}}/Build
       run: ctest -VV -C ${{matrix.configuration}}
+go
